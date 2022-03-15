@@ -1126,6 +1126,10 @@ public void getEmpByChoose() {
 	- SOFT – 软引用：移除基于垃圾回收器状态和软引用规则的对象。  
 	- WEAK – 弱引用：更积极地移除基于垃圾收集器状态和弱引用规则的对象。
 	- 默认的是 LRU
+	- 顺序 late - latter -last
+	- 时间 late - later - latest
+	- 少的 little - less - least
+	- 小的 little - lesser - littlest
 - flushInterval属性：刷新间隔，单位毫秒
 	- 默认情况是不设置，也就是没有刷新间隔，缓存仅仅调用语句（增删改）时刷新
 - size属性：引用数目，正整数
