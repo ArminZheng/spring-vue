@@ -14,7 +14,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 @SpringBootTest
-class SpringbootvueApplicationTests {
+class SpringVueApplicationTests {
 
     @Autowired
     Person person;

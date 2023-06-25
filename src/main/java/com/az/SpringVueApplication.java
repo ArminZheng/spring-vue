@@ -10,25 +10,31 @@ import java.util.Locale;
 
 /**
  * @author John
- * @date 7/8/2020
+ * @since 7/8/2020
  */
 //@ImportResource(locations = "classpath: beans.xml")
 @SpringBootApplication
-public class SpringbootvueApplication {
+public class SpringVueApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(SpringbootvueApplication.class, args);
+
+        SpringApplication.run(SpringVueApplication.class, args);
     }
 
     @Bean
-    public ViewResolver myViewResolver(){
+    public ViewResolver myViewResolver() {
+
         return new MyViewResolver();
     }
 
-    private static class MyViewResolver implements ViewResolver{
+    private static class MyViewResolver implements ViewResolver {
 
         @Override
         public View resolveViewName(String viewName, Locale locale) throws Exception {
+
             return null;
         }
+
     }
+
 }

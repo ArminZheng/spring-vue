@@ -11,13 +11,17 @@ import java.util.Collection;
 
 @Controller
 public class EmployeeController {
+
     @Autowired
     EmployeeDao employeeDao;
-    //查询所有员工返回
+
+    // 查询所有员工返回
     @GetMapping("/emps")
-    public String list(Model model){
+    public String list(Model model) {
+
         Collection<Employee> all = employeeDao.getAll();
-        model.addAttribute("emps",all);
+        model.addAttribute("emps", all);
         return "emp/list";
     }
+
 }

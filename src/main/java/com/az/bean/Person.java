@@ -16,7 +16,7 @@ public class Person {
 
     /**
      * <bean class="Person">
-     *     <property name="lastName" value="字面量/${key}从环境变量、配置文件中获取值/#{SpEl}></property>
+     * <property name="lastName" value="字面量/${key}从环境变量、配置文件中获取值/#{SpEl}></property>
      * </bean>
      * jsr303数据校验 + @Validated (need validation-api)  e.g. @Email (meaning is Email format that must be)
      */
@@ -28,12 +28,14 @@ public class Person {
     //@Value("true")
     private Boolean boss;
     private Date birth;
-//    @Value("${person.maps}")  no runnable
-    private Map<String,Object> maps;
+    //    @Value("${person.maps}")  no runnable
+    private Map<String, Object> maps;
     private List<Object> lists;
     private Dog dog;
-    void test(){
-        dog.getDHost();//不符合Bean规范
+
+    void test() {
+
+        dog.getDHost();// 不符合Bean规范
         /**
          * lombok插件会出现一些问题，尽量别用
          * JavaBean规范（三个全不变）：
@@ -42,4 +44,5 @@ public class Person {
          * 3. 首字母大写，大小写不变。Name -->getName/setName，这是最糟糕的，会找不到属性。
          */
     }
+
 }
