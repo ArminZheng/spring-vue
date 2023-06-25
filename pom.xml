@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.az</groupId>
-    <artifactId>springbootvue</artifactId>
+    <artifactId>spring-vue</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springbootvue</name>
-    <description>Demo project for Spring Boot</description>
+    <name>SpringVue</name>
+    <description>Vue with SpringBoot</description>
 
     <properties>
         <java.version>1.8</java.version>
