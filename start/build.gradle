@@ -1,0 +1,6 @@
+dependencies {
+    api project(':domain:domain-api')
+    api project(':domain:domain-core')
+    runtimeOnly 'mysql:mysql-connector-java:8.0.20'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.3.1.RELEASE'
+}

@@ -1,4 +1,4 @@
-package com.az;
+package com.az.start;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,7 +10,7 @@ import java.util.Locale;
 
 /**
  * @author John
- * @since 7/8/2020
+ * @since 2020-7-8
  */
 //@ImportResource(locations = "classpath: beans.xml")
 @SpringBootApplication
