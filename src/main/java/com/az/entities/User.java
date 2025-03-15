@@ -9,18 +9,32 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Data
-@Entity  // 这是一个实体类
-@Table(name = "tb_user")  // 指定和哪个数据表对应；如果省略就代表是类名小写
+// Entity + Table = Entity("tb_user")
+@Entity // This is an entity class. 
+// Specify which table it corresponds to.
+@Table(name = "tb_user") // if omitted, it represents the class name in lowercase.
 public class User {
 
-    @Id // 这是一个主键
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // 主键自增
+    /**
+     * This is a primary key.
+     * <p>
+     * IDENTITY: Relies on the database to auto-generate unique keys, typically through an
+     * auto-increment feature.
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // 自增
     private Integer id;
 
-    @Column(name = "last_name", length = 50) // 和数据表对应的一个列
+    /**
+     * table column
+     */
+    @Column(name = "last_name", length = 50)
     private String lastName;
 
+    /**
+     * Omit. The default column name is the attribute name.
+     */
     @Column
-    private String email;  // 省略默认列名就是属性名
+    private String email;
 
 }

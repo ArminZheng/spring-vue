@@ -4,20 +4,16 @@ import com.az.bean.Dog;
 import com.az.bean.Person;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.sql.Connection;
+import java.sql.SQLException;
+import javax.sql.DataSource;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 
-import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.SQLException;
-
 @SpringBootTest
 class SpringVueApplicationTests {
-
-    @Autowired
-    Person person;
 
     @Autowired
     ApplicationContext ioc;
@@ -27,6 +23,9 @@ class SpringVueApplicationTests {
         boolean helloService = ioc.containsBean("helloService002");
         System.out.println(helloService);
     }
+
+    @Autowired
+    Person person;
 
     @Test
     void contextLoads() {
@@ -46,10 +45,10 @@ class SpringVueApplicationTests {
         System.out.println(person);
     }
 
+    /* Data access test */
     @Autowired
     DataSource dataSource;
 
-    //数据访问测试
     @Test
     void dataSourceAccess() throws SQLException {
         System.out.println(dataSource.getClass());
@@ -57,4 +56,5 @@ class SpringVueApplicationTests {
         System.out.println(connection);
         connection.close();
     }
+
 }

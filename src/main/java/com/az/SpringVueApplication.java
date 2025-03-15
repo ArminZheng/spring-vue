@@ -1,16 +1,15 @@
 package com.az;
 
+import java.util.Locale;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
 
-import java.util.Locale;
-
 /**
  * @author John
- * @date 7/8/2020
+ * @since 7/8/2020
  */
 //@ImportResource(locations = "classpath: beans.xml")
 @SpringBootApplication
@@ -31,4 +30,5 @@ public class SpringVueApplication {
             return null;
         }
     }
+
 }

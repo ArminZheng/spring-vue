@@ -7,31 +7,36 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * WebMvcConfigurer 扩展SpringMVC的功能
+ * WebMvcConfigurer扩展SpringMVC的功能
  */
 @Configuration
 public class MyMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-
-        registry.addViewController("/test").setViewName("success");
+        registry.addViewController("/zheng").setViewName("success");
     }
 
-    // 所有的WebMvcConfigurerAdapter组件都会一起起作用
-    @Bean  // 将组件注册在容器
-    public WebMvcConfigurer webMvcConfigurer() {
-
-        WebMvcConfigurer webMvcConfigurer = new WebMvcConfigurer() {
+    /**
+     * 所有的WebMvcConfigurerAdapter组件都会一起起作用
+     *
+     * @return 返回组件, 并注册在容器
+     */
+    @Bean
+    public WebMvcConfigurer webMvcConfigurer(){
+        WebMvcConfigurer webMvcConfigurer = new WebMvcConfigurer(){
             @Override
             public void addViewControllers(ViewControllerRegistry registry) {
-
                 registry.addViewController("/").setViewName("login");
                 registry.addViewController("/index.html").setViewName("login");
                 registry.addViewController("/main.html").setViewName("dashboard");
             }
 
-            // 注册拦截器
+            /**
+             * 注册拦截器
+             *
+             * @param registry
+             */
             @Override
             public void addInterceptors(InterceptorRegistry registry) {
                 // 静态资源； *.css *.js
@@ -39,7 +44,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
                 // registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/index.html","/","/user/login","/asserts/**","/webjars/**");
             }
         };
+
         return webMvcConfigurer;
     }
-
 }

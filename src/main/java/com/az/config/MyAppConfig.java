@@ -1,21 +1,27 @@
 package com.az.config;
 
-import com.az.service.HelloService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @Configuration 当前类是一个配置类， 就是用来替换之前的spring配置文件
- * @Value注解&@Bean都是等价替换之前的<bean>标签属性
+ * Annotation @Configuration, used to replace the previous configuration files.
+ * <p>
+ * Annotation @Value and @Bean are both equivalent replacements for the <bean> tag attribute.
  */
 @Configuration
 public class MyAppConfig {
 
-    // 将方法的放回值添加到容器中，容器中的这个组件默认id就是方法名
+    /**
+     * Add the return value of the method to the container, and the default ID of this component in
+     * the container is the method name.
+     *
+     * @return HelloService Instance
+     */
     @Bean
-    public HelloService helloService() {
-
+    public HelloService helloService(){
         return new HelloService();
     }
 
+    public static class HelloService {
+    }
 }
